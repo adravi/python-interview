@@ -1,0 +1,16 @@
+According to Jean-Paul Calderone's Filesystem structure of a Python project:
+
+Project/
+|-- bin/
+|   |-- project
+|
+|-- project/
+|   |-- test/
+|   |   |-- __init__.py
+|   |   |-- test_main.py
+|   |   
+|   |-- __init__.py
+|   |-- main.py
+|
+|-- setup.py
+|-- README
