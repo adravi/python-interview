@@ -1,6 +1,7 @@
 # https://www.algoexpert.io/questions/monotonic-array
 # A monotonic array that array whose elements, from left to right, are entirely non-increasing or non-decreasing 
 # input: [-1, -5, -10, -1100, -1100, -1101, -1102, -9001]
+# output: True
 
 # AND boolean operations (Algebraic multiplied) :
     # True : True and True
@@ -27,29 +28,3 @@ def isMonotonic(array):
 # O(1) S
 
 # ------------------------------------------------------------------------------------
-def isMonotonic(array):
-    i = 0
-    j = 1
-    monoUp = None
-
-    # Look for a pair of different nums whose substraction indicates the mono-trend (up/down)
-    while j < len(array) and monoUp == None:
-        if array[i] != array[j]:
-            monoUp = True if (array[j] - array[i] > 0) else False
-
-        i,j = i+1, j+1
-
-    # MonoUp either being True or False must be maintained across the whole array
-    while j < len(array):
-        diff = array[j] - array[i]
-        if diff > 0 and not monoUp:
-            # Monotonic downwards broken!
-            return False
-        elif diff < 0 and monoUp:
-            # Monotonic upwards broken!
-            return False
-
-        i,j = i+1, j+1
-
-    # If the whole array has been traversed without breaking Mono, then it is monotonic, indeed     
-    return True
