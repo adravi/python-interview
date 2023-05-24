@@ -1,3 +1,5 @@
+# https://www.algoexpert.io/questions/spiral-traverse
+
 # array dimensions size are (n * m)
 # example: 4 * 4
 
@@ -56,7 +58,7 @@ def spiralTraverse(array):
 
     return result
 
-# O(n * m) T
+# O(n * m) T -> or O(m) if single row, or O(n) if single column
 # O[n * m] S
 
         
