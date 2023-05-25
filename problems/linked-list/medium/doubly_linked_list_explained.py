@@ -121,6 +121,7 @@ class DoublyLinkedList:
         # Check if there is a node on the next pointer
         if node.next is not None:
             node.next.prev = node.prev
+        # It is safe to update the pointers to null
         node.prev = None
         node.next = None
 
