@@ -39,6 +39,6 @@ def smallestDifference(arrayOne, arrayTwo):
 
     return smallestPair
 
-# O(n log(n) + m log(m)) T
-# O(n + m) S
+# O(n log(n) + m log(m)) Time
+# O(n + m) Space
 

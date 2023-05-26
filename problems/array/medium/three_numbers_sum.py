@@ -33,7 +33,7 @@ def threeNumberSum(array, targetSum):
 
     return triplets
 
-# O(n^2) T
-# O(n) S
+# O(n^2) Time
+# O(n) Space
 
             

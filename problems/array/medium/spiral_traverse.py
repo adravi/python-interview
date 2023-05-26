@@ -58,7 +58,7 @@ def spiralTraverse(array):
 
     return result
 
-# O(n * m) T -> or O(m) if single row, or O(n) if single column
-# O[n * m] S
+# O(n * m) Time -> or O(m) if single row, or O(n) if single column
+# O[n * m] Space
 
         

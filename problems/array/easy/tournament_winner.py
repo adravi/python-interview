@@ -34,8 +34,8 @@ def updateScores(winningTeam, points, scores):
 
     scores[winningTeam] += points
 
-# O(n) T -> where n is the number of competitions or results
-# O(k) S -> for the keys that we are scoring. This problems limits the key length to 30 (30k + 1) Max 30 chars for each k
+# O(n) Time -> where n is the number of competitions or results
+# O(k) Space -> for the keys that we are scoring. This problems limits the key length to 30 (30k + 1) Max 30 chars for each k
 #           simplified to k (since 30 and 1 are constants)
 
 # ------------------------------------------------------------------------------------

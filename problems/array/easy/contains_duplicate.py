@@ -19,5 +19,5 @@ def containsDuplicate(nums) -> bool:
     
     return False
 
-# O(n) T
-# O(n) S
+# O(n) Time
+# O(n) Space

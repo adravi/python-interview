@@ -24,7 +24,5 @@ def isMonotonic(array):
     # At least one must be True, for the array to be monotonic
     return monoUp or monoDown
 
-# O(n) T
-# O(1) S
-
-# ------------------------------------------------------------------------------------
+# O(n) Time
+# O(1) Space

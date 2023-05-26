@@ -36,5 +36,5 @@ def sortedSquaredArray(array):
 
     return squares
 
-# O(n) T
-# O(n) S
+# O(n) Time
+# O(n) Space

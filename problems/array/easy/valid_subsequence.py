@@ -17,5 +17,5 @@ def isValidSubsequence(array, sequence):
     
     return False
 
-# O(n) T
-# O(1) S
+# O(n) Time
+# O(1) Space

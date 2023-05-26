@@ -24,5 +24,5 @@ def nonConstructibleChange(coins):
 
     return currentChange + 1
 
-# O((n log(n)) + n) -> O(n log(n)) T
-# O(1) S -> Because we sorted the array in-place
+# O((n log(n)) + n) -> O(n log(n)) Time
+# O(1) Space -> Because we sorted the array in-place

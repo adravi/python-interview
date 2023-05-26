@@ -1,6 +1,6 @@
 # https://www.algoexpert.io/questions/longest-peak
 # input: array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]]
-# output: 6
+# output: 6 // 0, 10, 6, 5, -1, -3
 
 def longestPeak(array):
     if len(array) < 3:
@@ -40,3 +40,6 @@ def longestPeak(array):
             longestPeak = length
 
     return longestPeak
+
+# O(n) Time
+# O(s) Space

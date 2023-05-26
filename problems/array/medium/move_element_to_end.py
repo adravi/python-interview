@@ -33,5 +33,5 @@ def moveElementToEnd(array, toMove):
 
     return array
 
-# O(n) T
-# O(1) S
+# O(n) Time
+# O(1) Space

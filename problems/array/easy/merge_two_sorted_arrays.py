@@ -25,10 +25,10 @@ def merge(self, nums1, m, nums2, n):
             j -= 1
         k -= 1
 
-# O(m+n) T
+# O(m+n) Time
 # We are iterating through both arrays once
 
-# O(1) S
+# O(1) Space
 # We are not using any extra space
 # ------------------------------------------------------------------------------------
 
