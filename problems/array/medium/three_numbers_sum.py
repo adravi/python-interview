@@ -9,7 +9,7 @@ def threeNumberSum(array, targetSum):
 
     triplets = []
 
-    # We stop at the aray lenght - 2, because we are inspecting one number agains 2 to the right
+    # We stop at the ante-penultimate, because we are inspecting one number agains 2 to the right
     for i in range(len(array) - 2):
         left = i + 1
         right = len(array) - 1
