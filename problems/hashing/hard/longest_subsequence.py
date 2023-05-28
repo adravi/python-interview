@@ -22,4 +22,6 @@ def longestSubsequence(nums):
     
     return longestLength
 
+# O(n) Time
+# O(n) Space
 
