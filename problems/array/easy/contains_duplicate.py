@@ -6,7 +6,7 @@
 # Input: nums = [1,2,3,1]
 # Output: true
 
-def containsDuplicate(nums) -> bool:
+def containsDuplicate(nums):
     existingNums = set()
 
     for i in range(len(nums)):

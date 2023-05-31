@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/valid-palindrome/
+# input: 'A man, a plan, a canal: Panama'
+#   After removing non-alphanumeric chars: 'amanaplanacanalpanama' // Is a palindrome!
+# output: True
 
 def isValidPalindrome(s):
     if len(s) == 0 or len(s) == 1:

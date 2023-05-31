@@ -8,27 +8,22 @@ def threeNumberSum(array, targetSum):
     array.sort()
 
     triplets = []
-
-    # We stop at the ante-penultimate, because we are inspecting one number agains 2 to the right
-    for i in range(len(array) - 2):
+    for i in range(len(array) - 2):     # We stop at the ante-penultimate, we are inspecting one number agains 2 to the right
         left = i + 1
         right = len(array) - 1
 
-        # Make sure the pointers are not overlapping/passing each other
-        while left < right:
+        while left < right:     # Make sure the pointers are not overlapping/passing each other
             currentSum = array[i] + array[left] + array[right]
 
-            if currentSum == targetSum:
+            if currentSum == targetSum: # Triplet found!
                 triplets.append([array[i], array[left], array[right]])
                 left += 1
                 right -= 1
 
-            # Increment left pointer garantees a larger currentSum
-            elif currentSum < targetSum:
+            elif currentSum < targetSum:    # Increment left pointer garantees a larger currentSum
                 left += 1
-                
-            # Decrement the left pointer guarantees a smaller currentSum
-            elif currentSum > targetSum:
+            
+            elif currentSum > targetSum:    # Decrement the left pointer guarantees a smaller currentSum
                 right -= 1
 
     return triplets
