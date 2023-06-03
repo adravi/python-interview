@@ -3,8 +3,8 @@
 # Given an integer array nums, return true if any value appears at least twice in the array,
 # return false if every element is distinct
 
-# Input: nums = [1,2,3,1]
-# Output: true
+# input: nums = [1,2,3,1]
+# output: true
 
 def containsDuplicate(nums):
     existingNums = set()
@@ -19,5 +19,5 @@ def containsDuplicate(nums):
     
     return False
 
-# O(n) Time
-# O(n) Space
+# O(n) time
+# O(n) space

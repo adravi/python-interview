@@ -11,9 +11,8 @@ def sortedSquaredArray(array):
     
     return squares
 
-# O(n log(n)) T
-# O(n) S
-
+# O(n log(n)) time
+# O(n) space
 # ----------------------------------------------------------
 
 def sortedSquaredArray(array):
@@ -36,5 +35,5 @@ def sortedSquaredArray(array):
 
     return squares
 
-# O(n) Time
-# O(n) Space
+# O(n) time
+# O(n) space

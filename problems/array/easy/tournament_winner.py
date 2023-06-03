@@ -10,7 +10,7 @@
 HOME_TEAM_WON = 1
 
 def tournamentWinner(competitions, results):
-    # Initilize hashmap with a simple empty key so we can make comparisons
+    # initilize hashmap with a simple empty key so we can make comparisons
     bestTeam = ''
     scores = { bestTeam: 0 }
 
@@ -21,7 +21,7 @@ def tournamentWinner(competitions, results):
         winningTeam = homeTeam if result == HOME_TEAM_WON else awayTeam
         updateScores(winningTeam, 3, scores)
 
-        # Update the bestTeam
+        # update the bestTeam
         if scores[winningTeam] > scores[bestTeam]:
                 bestTeam = winningTeam
     
@@ -34,9 +34,9 @@ def updateScores(winningTeam, points, scores):
 
     scores[winningTeam] += points
 
-# O(n) Time -> where n is the number of competitions or results
-# O(k) Space -> for the keys that we are scoring. This problems limits the key length to 30 (30k + 1) Max 30 chars for each k
-#           simplified to k (since 30 and 1 are constants)
+# O(n) time -> where n is the number of competitions or results
+# O(k) space -> for the keys that we are scoring. This problems limits the key length to 30 (30k + 1) Max 30 chars for each k
+#               simplified to k (since 30 and 1 are constants)
 
 # ------------------------------------------------------------------------------------
 

@@ -41,5 +41,5 @@ def longestPeak(array):
 
     return longestPeak
 
-# O(n) Time
-# O(s) Space
+# O(n) time
+# O(s) space
