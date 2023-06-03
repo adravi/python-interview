@@ -5,18 +5,18 @@
 # output: 4
 
 def search(nums, target):
-    low = 0
-    high = len(nums) - 1
+    left = 0
+    right = len(nums) - 1
     mid = 0
 
-    while low <= high:
-        mid = (high + low) // 2
+    while left <= right:
+        mid = (right + left) // 2
 
         if nums[mid] < target:      # target is greater, search on the right half
-            low = mid + 1
+            left = mid + 1
         
         elif nums[mid] > target:    # target is smaller, search the left half
-            high = mid - 1
+            right = mid - 1
         
         if nums[mid] == target:     # found!
             return mid
