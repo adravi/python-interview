@@ -3,6 +3,27 @@
 # output: 1 // the first non-repeating char is 'b', found at index 1
 
 def firstNonRepeatingChar(string):
+    nonRepDict = {}
+
+    for char in string:
+        if char not in nonRepDict:
+            nonRepDict[char] = 1
+        else:
+            nonRepDict[char] += 1
+
+    for i,char in enumerate(string):
+        if nonRepDict[char] > 1:
+            continue
+        else:
+            return i
+        
+    return -1
+
+# O(2n) -> O(n) time
+# O(26) -> O(1) space  // We know there's a fixed number of letters in the english alphabet, so it's constant aux mem
+
+# -------------------------------------------------------------------
+def firstNonRepeatingChar2(string):
     charSet = set()
     nonRepMap = {}
 
