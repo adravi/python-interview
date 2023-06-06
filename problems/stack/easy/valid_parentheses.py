@@ -5,10 +5,8 @@
 # input: s = "(]"
 # output: False
 
-import math
-
 def isValid(s):
-    if len(s) == 0 or math.fmod(len(s), 2) != 0:
+    if len(s) == 0 or (len(s) % 2) != 0:
         return False
     
     stack = []
