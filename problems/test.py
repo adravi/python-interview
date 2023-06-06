@@ -3,6 +3,13 @@
 # k = 3
 # print(array[:k])
 
-string = 'hsbfmssa'
-for i, char in enumerate(string):
-    print(i, char)
+# string = 'hsbfmssa'
+# for i, char in enumerate(string):
+#     print(i, char)
+
+# char = 'a'
+# charValue = ord(char)
+# print(charValue + 1)
+# print(ord('b'))
+
+
