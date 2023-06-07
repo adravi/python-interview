@@ -1,4 +1,3 @@
-# RE-VISI: https://www.youtube.com/watch?v=GLCJIXStcMk&ab_channel=TechWired
 # https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/
 # input: a = 2, b = 6, c = 5
 # output: 3 // After flips a = 1 , b = 4 , c = 5 such that (a OR b == c)
@@ -27,3 +26,7 @@ def minFlips(a, b, c):
 # O(1) space
 
 minFlips(7, 7257, 4934)
+
+# RE-VISI!!!
+# https://www.youtube.com/watch?v=GLCJIXStcMk&ab_channel=TechWired
+# https://www.w3schools.com/python/python_operators.asp
