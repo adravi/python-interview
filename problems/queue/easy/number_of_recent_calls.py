@@ -23,7 +23,7 @@ class RecentCounter:
 # O(n) space
 # ---------------------------------------------------------------------------
 
-# from math import deque
+# from collections import deque
 
 # init queue: myQueue = deque()
 
