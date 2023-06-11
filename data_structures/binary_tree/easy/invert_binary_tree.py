@@ -11,7 +11,7 @@ class TreeNode:
         self.right = right
 
 def recursiveInvert(self, node):
-    if (node):
+    if node:
         left = node.left
         right = node.right
 
