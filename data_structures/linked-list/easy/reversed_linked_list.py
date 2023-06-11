@@ -8,18 +8,18 @@ class ListNode:
         self.next = next
 
 def reverseList(head):
-    currNode = head
-    prevNode = None
+    curr = head
+    prev = None
 
-    while currNode:
-        nextNode = currNode.next    # Save ref to the nextNode ->
+    while curr:
+        next = curr.next    # Save ref to the nextNode ->
 
-        currNode.next = prevNode    # Connect current to previous <-
+        curr.next = prev    # Connect current to previous <-
         
-        prevNode = currNode         # Update prev
-        currNode = nextNode         # Update current
+        prev = curr         # Update prev
+        curr = next         # Update current
 
-    return prevNode     # If the while-loop broke, it means that head=None
+    return prev     # If the while-loop broke, it means that head=None
                         # we reached the 'lastNode.next' (which is None) and must return the previous node pointer
 
 # O(n)

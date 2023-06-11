@@ -7,7 +7,6 @@
 def search(nums, target):
     left = 0
     right = len(nums) - 1
-    mid = 0
 
     while left <= right:
         mid = (right + left) // 2

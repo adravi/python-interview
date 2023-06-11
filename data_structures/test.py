@@ -41,3 +41,20 @@
 # print(myQueue[-1])
 
 # --------------------------------------
+
+stack = []
+stack.append(3)
+stack.append(4)
+print(stack)
+
+n1 = stack.pop()
+if stack:
+    print(stack)
+else:
+    print('stack is empty')
+
+n2 = stack.pop()
+if stack:
+    print(stack)
+else:
+    print('stack is empty')
