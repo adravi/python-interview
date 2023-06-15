@@ -13,6 +13,8 @@ def dfs(root):
     dfs(root.left)
     dfs(root.right)
 
+# DFS: O(V) time
+
 """
          1
        /   \

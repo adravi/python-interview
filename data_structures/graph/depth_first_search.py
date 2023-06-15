@@ -28,6 +28,8 @@ class Graph:
                 if adjacentNode not in visited:         # if a adjacent hasn't been visited, push it to stack
                     stack.append(adjacentNode)
 
+# O(V) time
+# O(V + E) space | aux memory: set()
 
 graph = Graph();
 graph.addEdge(3, 7);
@@ -39,7 +41,6 @@ graph.addEdge(7, 1);
 graph.addEdge(1, 22);
 graph.addEdge(1, 2);
 graph.addEdge(1, 54);
-
 
 #                3
 #           /    |    \
@@ -53,6 +54,3 @@ graph.addEdge(1, 54);
 # DFS: 3, 6, 11, 4, 9, 7, 1, 54, 2, 22 | traverse order is RIGHT LEFT: <-
 
 graph.DFS(3)
-
-# O(V + E) time
-# O(V) space | aux memory: set()

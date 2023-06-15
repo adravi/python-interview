@@ -23,6 +23,9 @@ def find_max_points(node):
 
     return node.points + max(find_max_points(child) for child in node.children)
 
+# O(V) time
+# O(V+E) space
+
 class Milestone(object):
     def __init__(self, points, children=None):
         self.points = points

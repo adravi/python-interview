@@ -21,8 +21,8 @@ class TreeNode:
 
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
     
-# O(V + E) time
-# O(V) space  
+# O(V) time
+# O(V + E) space  
 # ------------------------------------------------------------------------
 
 node4 = TreeNode(5)

@@ -31,6 +31,8 @@ class Graph:
                 if adjacentNode not in visited: # if an adjacent hasn't been visited, mark it visited and enqueue it
                     queue.append(adjacentNode)
 
+# O(V) time
+# O(V + E) space | aux memory: set()
 
 graph = Graph();
 graph.addEdge(3, 6);
@@ -53,8 +55,5 @@ graph.addEdge(1, 22);
 
 
 # BFS: 3, 6, 9, 7, 11, 4, 1, 54, 2, 22
-
-# O(V + E) time
-# O(V) space | aux memory: set()
 
 graph.BFS(3)
