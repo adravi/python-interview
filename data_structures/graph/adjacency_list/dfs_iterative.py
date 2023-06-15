@@ -1,5 +1,5 @@
 # Depth First Search
-# Iterative using a stack
+# Iterative using a stack in a graph represented as an adjacency list
 
 class Graph:
     def __init__(self): 
@@ -28,8 +28,19 @@ class Graph:
                 if adjacentNode not in visited:         # if a adjacent hasn't been visited, push it to stack
                     stack.append(adjacentNode)
 
-# O(V) time
-# O(V + E) space | aux memory: set()
+#   O(n) time  / the algo itself only visits each node once
+#   O(n) space / the set and stack can store all the vertices, each O(2n) -> O(n)
+
+"""
+IMPORTANT for AJACENCY-LIST representation:
+If the graph data structure is represented as an ADJACENCY-LIST:
+- Each node keeps track of all of its neighboring edges. Assume there are V nodes and E edges in the graph
+- You find all of a node's neighbors by traversing its adjacency list only once in linear time
+- The sum of the sizes of the adjacency lists of all nodes in a directed graph is E
+    - In this example, the temporal complexity is O(V) + O(E) = O(V + E)
+- Each edge in an undirected graph appears twice. Once at either end of the edge's adjacency list
+    - This case's temporal complexity will be O(V) + O(2E) = O(V + E)
+"""
 
 graph = Graph();
 graph.addEdge(3, 7);

@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/invert-binary-tree/
 # given the root of a binary tree, invert the tree, and return its root
 
-# input: root = [4,2,7,1,3,6,9]
+# input: root = [4,2,7,1,3,6,9] // pre-order listing
 # output: [4,7,2,9,6,3,1]
 
 class TreeNode:
@@ -26,5 +26,5 @@ def invertTree(self, root):
     self.recursiveInvert(node)
     return root
 
-# O(V + E) time
-# O(1) space
+# O(V) time  / V: number of vertices/nodes
+# O(1) space / the algorithm itself uses no extra aux memory

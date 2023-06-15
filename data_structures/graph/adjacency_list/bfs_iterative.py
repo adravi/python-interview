@@ -1,5 +1,5 @@
 # Breadth First Search
-# Iterative using a queue
+# Iterative using a queue a graph represented as an adjacency list
 
 from collections import deque
 

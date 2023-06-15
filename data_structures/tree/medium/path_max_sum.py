@@ -17,14 +17,14 @@ What's the maximum number of points our player can get?
 find_max_points(game) => 12
 """
 
-def find_max_points(node):
+def find_max_points(node): # This works as a recursive implementation of Depth First Search
     if not node.children:
         return node.points
 
     return node.points + max(find_max_points(child) for child in node.children)
 
-# O(V) time
-# O(V+E) space
+# O(V) time  / V number of vertices/nodes
+# O(1) space / the algorithm itself uses no extra aux memory
 
 class Milestone(object):
     def __init__(self, points, children=None):

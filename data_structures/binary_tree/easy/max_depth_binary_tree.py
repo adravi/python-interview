@@ -21,8 +21,8 @@ class TreeNode:
 
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
     
-# O(V) time
-# O(V + E) space  
+# O(V) time  / V: number of nodes 
+# O(1) space / the algorithm itself uses no extra aux memory
 # ------------------------------------------------------------------------
 
 node4 = TreeNode(5)
