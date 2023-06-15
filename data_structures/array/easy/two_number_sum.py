@@ -2,8 +2,7 @@
 # array = [3, 5, -4, 8, 11, 1, -1, 6]
 # targetSum = 10
 
-def twoNumberSum(array, targetSum):
-    # Create a hash-set using the array as input and referencing each element as 'num'
+def twoNumberSum(array, targetSum):  # Create a hash-set using the array as input and referencing each element as 'num'
     nums = set(num for num in array)
     
     for num in array:
