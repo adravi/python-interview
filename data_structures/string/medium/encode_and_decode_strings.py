@@ -1,17 +1,16 @@
 # https://www.lintcode.com/problem/659/description
 """
 Design an algorithm to encode a list of strings to a string.
-The encoded string is then sent over the network and is decoded back to the original list of string. 
-Implement 'encode' and 'decode'
+The encoded string is sent over the network and is decoded back to the original list of string. Implement 'encode' and 'decode'
 
 # input:  ['lint', 'code', 'love', 'you']
 # output: ['lint', 'code', 'love', 'you'] // one possible encode method is: 'lint:;code:;love:;you'
 ------------------------------------------------------------------------------------------------
-def encode(strs):           Incredibly naive approach HAHA (using delimiter char)
-    return '/'.join(strs)
+def encode(strs):           Incredibly naive approach (using delimiter char)
+    return '#'.join(strs)
 
 def decode(str):            The problem is that any delimiter char can appear in any word, making it impossible to differenciate
-    return str.split('/')
+    return str.split('#')   if it is the actual delimiter, or a char part of any word
 ----------------------------------------------------------------------------------------------------
 """
 
@@ -29,11 +28,11 @@ def encode(strings):
 
 def decode(string):
     decoded = []
-    i = 0
+    i = 0                              # i is index to traverse the encoded string, from the beginning
     
     while i < len(string):
         j = i                          # j starts at i
-        while string[j] != '#':        # collect the numerical portion for knowing the word length
+        while string[j] != '#':        # collect the numerical portion that represents the word length
             j += 1                     # increase j, until finding the char '#'
         
                                                # at this point, j is pointing at char '#'
