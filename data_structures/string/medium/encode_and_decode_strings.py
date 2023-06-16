@@ -1,7 +1,7 @@
 # https://www.lintcode.com/problem/659/description
 """
 Design an algorithm to encode a list of strings to a string.
-The encoded string is sent over the network and is decoded back to the original list of string. Implement 'encode' and 'decode'
+The encoded string is sent over and is decoded back to the original list of string. Implement 'encode' and 'decode'
 
 # input:  ['lint', 'code', 'love', 'you']
 # output: ['lint', 'code', 'love', 'you'] // one possible encode method is: 'lint:;code:;love:;you'
@@ -28,13 +28,12 @@ def encode(strings):
 
 def decode(string):
     decoded = []
-    i = 0                              # i is index to traverse the encoded string, from the beginning
+    i = 0                              # i is index to traverse the encoded string, from 0 to the last index
     
-    while i < len(string):
-        j = i                          # j starts at i
-        while string[j] != '#':        # collect the numerical portion that represents the word length
-            j += 1                     # increase j, until finding the char '#'
-        
+    while i < len(string):             # j starts at i
+        j = i                          # collect the numerical portion that represents the word length        
+        while string[j] != '#':        # increase j, until finding the char '#'
+            j += 1
                                                # at this point, j is pointing at char '#'
         length = int(string[i:(j)])            # length is at substring [i:j] (last index is not inclusive! so last index: j-1)
         word = string[(j+1): (j + 1 + length)] # word is substring: [(one after j) : (next to j + length)] (last not inclusive)
