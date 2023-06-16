@@ -6,16 +6,17 @@
 
 # NOTE that we only want to return the LARGEST SUBARRAY SUM, not the actual SUBARRAY
 
-def maxSubArray(nums):        # Technique is a sliding window that expands to the right, but reduces to the left
-    maxSubarraySum = nums[0]
+def maxSubArray(nums):        # technique is a sliding window that expands to the right, but reduces to the left
+                              # we will get rid of any 'prefix' (set of numbers) that produce a negative sum
+    maxSubarraySum = nums[0]  
     currSum = 0
 
     for num in nums:
-        if currSum < 0:
+        if currSum < 0:       # if the current sum ever becomes negative, reset it to 0. We dont need negative 'prefixes'
             currSum = 0
 
-        currSum += num
-        maxSubarraySum = max(currSum, maxSubarraySum)
+        currSum += num        # simply add the next number
+        maxSubarraySum = max(currSum, maxSubarraySum)   # update the largest subarray sum
     
     return maxSubarraySum
 

@@ -16,7 +16,7 @@ class Graph:
 
     def DFS(self, rootNode):
         stack = [rootNode]
-        visited = set()
+        visited = set()        # the hash-set is to avoid visiting a node more than once. be aware, there could be CYCLES
 
         while stack:
             node = stack.pop()
