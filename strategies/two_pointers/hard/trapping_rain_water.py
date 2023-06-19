@@ -19,6 +19,7 @@ def water_trap(height):
     res = 0
 
     while left < right:
+        
         if left_max < right_max:
             left += 1
             left_max = max(left_max, height[left])
