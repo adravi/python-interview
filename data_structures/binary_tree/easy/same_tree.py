@@ -9,20 +9,21 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def isSameTree(p, q):                     # DFS iterative solution using stack
+def isSameTree(p, q):                     # DFS iterative solution using stack for comparing the 2 explored nodes in both trees
     stack = [[p, q]]                      # store the pair of nodes (p, q) in stack and perform DFS traversal
     
     while stack:
-        p, q = stack.pop()
+        p, q = stack.pop()                   # compare the 2 nodes, explored at the same level and position
         
-        if p and q and p.val == q.val:    # p, q, being equal
+        if (p and not q) or (not p and q):   # one of them being None: Trees are not the same
+            return False
+        
+        elif p and q and p.val != q.val:     # nodes not being of equal values: Trees are not the same
+            return False  
+
+        elif p and q and p.val == q.val:     # nodes being equal: Trees are the same so far, keep exploring the trees
             stack.append([p.left, q.left])
-            stack.append([p.right, q.right])
-
-        # (not p and not q)               # another true case
-
-        elif p or q:                      # the negation of it ^ is: (p or q) by DeMorgan's law
-            return False                  # this could be understood at either only p or q being None
+            stack.append([p.right, q.right])               
     
     return True
 
