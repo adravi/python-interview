@@ -7,15 +7,15 @@
 # output: true
 
 def containsDuplicate(nums):
-    existingNums = set()        # the key is having a set to look-up for already inspected nums
+    existing_nums = set()        # the key is having a set to look-up for already inspected nums
 
     for i in range(len(nums)):
         num = nums[i]
 
-        if num in existingNums:
+        if num in existing_nums:
             return True
         else:
-            existingNums.add(num)
+            existing_nums.add(num)
     
     return False
 

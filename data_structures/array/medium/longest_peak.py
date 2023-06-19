@@ -2,44 +2,44 @@
 # input: array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]]
 # output: 6 // 0, 10, 6, 5, -1, -3
 
-def longestPeak(array):
+def longest_peak(array):
     if len(array) < 3:
         return 0
 
-    peakIndexes = []
+    peak_indexes = []
     for idx in range(1, len(array) - 1):
-        potentialPeak = array[idx]
+        potential_peak = array[idx]
         left = array[idx - 1]
         right = array[idx + 1]
 
-        if potentialPeak > left and potentialPeak > right:
-            peakIndexes.append(idx)
+        if potential_peak > left and potential_peak > right:
+            peak_indexes.append(idx)
 
-    longestPeak = 0
-    for peakIdx in peakIndexes:
+    longest_peak = 0
+    for peak_idx in peak_indexes:
         length = 1
-        i, j = peakIdx, peakIdx 
+        i, j = peak_idx, peak_idx 
 
         while i - 1 >= 0:
-            current = array[i]
+            curr = array[i]
             prev = array[i - 1]
-            if current <= prev:
+            if curr <= prev:
                 break
             length += 1
             i -= 1
 
         while j + 1 < len(array):
-            current = array[j]
+            curr = array[j]
             next = array[j + 1]
-            if current <= next:
+            if curr <= next:
                 break
             length += 1
             j += 1
         
-        if length > longestPeak:
-            longestPeak = length
+        if length > longest_peak:
+            longest_peak = length
 
-    return longestPeak
+    return longest_peak
 
 # O(n) time
 # O(s) space

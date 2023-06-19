@@ -11,18 +11,18 @@ def nonConstructibleChange(coins):
     # sort array ASC: O(n log(n)) T -> It uses quicksort
     coins.sort()
 
-    currentChange = 0
+    curr_change = 0
 
     for coin in coins:
-        # inspect the current coin. Is it greater than currentChange + 1 ?
-        if coin > currentChange + 1:
-            # If so, we cannot create the value of currentChange + 1
-            return currentChange + 1
+        # inspect the current coin. Is it greater than curr_change + 1 ?
+        if coin > curr_change + 1:
+            # If so, we cannot create the value of curr_change + 1
+            return curr_change + 1
         
         # otherwise, add-up the value of the inspected coin
-        currentChange += coin
+        curr_change += coin
 
-    return currentChange + 1
+    return curr_change + 1
 
 # O((n log(n)) + n) -> O(n log(n)) time
 # O(1) space -> Because we sorted the array in-place

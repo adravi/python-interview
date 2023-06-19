@@ -8,17 +8,17 @@
 
 def maxSubArray(nums):        # technique is a sliding window that expands to the right, but reduces to the left
                               # we will get rid of any 'prefix' (set of numbers) that produce a negative sum
-    maxSubarraySum = nums[0]  
-    currSum = 0
+    max_subarray_sum = nums[0]  
+    curr_sum = 0
 
     for num in nums:
-        if currSum < 0:       # if the current sum ever becomes negative, reset it to 0. We dont need negative 'prefixes'
-            currSum = 0
+        if curr_sum < 0:       # if the current sum ever becomes negative, reset it to 0. We dont need negative 'prefixes'
+            curr_sum = 0
 
-        currSum += num        # simply add the next number
-        maxSubarraySum = max(currSum, maxSubarraySum)   # update the largest subarray sum
+        curr_sum += num        # simply add the next number
+        max_subarray_sum = max(curr_sum, max_subarray_sum)   # update the largest subarray sum
     
-    return maxSubarraySum
+    return max_subarray_sum
 
 # O(n) time
 # O(1) space

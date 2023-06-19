@@ -12,15 +12,15 @@
     # False: False or False
 
 def isMonotonic(array):
-    monoUp = True
-    monoDown = True
+    mono_up = True
+    mono_down = True
 
     for i in range(len(array) - 1): # make sure that i does not go beyond the penultimate index as [i + 1] will be used
-        # for monoUp or monoDown to stay True, both comparisons must always be True
-        monoUp = monoUp and (array[i] <= array[i + 1])
-        monoDown = monoDown and (array[i] >= array[i + 1])
+        # for mono_up or mono_down to stay True, both comparisons must always be True
+        mono_up = mono_up and (array[i] <= array[i + 1])
+        mono_down = mono_down and (array[i] >= array[i + 1])
 
-    return monoUp or monoDown   # at least one must be True, for the array to be monotonic
+    return mono_up or mono_down   # at least one must be True, for the array to be monotonic
 
 # O(n) time
 # O(1) space

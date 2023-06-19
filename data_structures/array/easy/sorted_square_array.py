@@ -1,7 +1,7 @@
 # https://www.algoexpert.io/questions/sorted-squared-array
 # array = [1, 2, 3, 4, 5, 6, 8, 9]
 
-def sortedSquaredArray(array):
+def sorted_squared_array(array):
     squares = []
 
     for i in range(len(array)):
@@ -18,20 +18,20 @@ def sortedSquaredArray(array):
 def sortedSquaredArray(array):
     squares = [0] * len(array)
 
-    leftValueIdx = 0
-    rightValueIdx = len(array) - 1
+    left_val_idx = 0
+    right_val_idx = len(array) - 1
 
     for idx in reversed(range(len(array))):
 
-        leftValue = array[leftValueIdx]
-        rightValue = array[rightValueIdx]
+        left_val = array[left_val_idx]
+        right_val = array[right_val_idx]
 
-        if abs(leftValue) >= abs(rightValue):
-            squares[idx] = pow(leftValue, 2)
-            leftValueIdx += 1
+        if abs(left_val) >= abs(right_val):
+            squares[idx] = pow(left_val, 2)
+            left_val_idx += 1
         else:
-            squares[idx] = pow(rightValue, 2)
-            rightValueIdx -= 1
+            squares[idx] = pow(right_val, 2)
+            right_val_idx -= 1
 
     return squares
 

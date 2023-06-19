@@ -1,26 +1,26 @@
 # https://leetcode.com/problems/ransom-note/description/
 
-# input: ransomNote = "aa", magazine = "ab"         // ransomeNode = n size  // magazine = m size
+# input: ransom_note = "aa", magazine = "ab"         // ransomeNode = n size  // magazine = m size
 # output: false
 
-# input: ransomNote = "aa", magazine = "aab"
+# input: ransom_note = "aa", magazine = "aab"
 # output: true
 
-def canConstruct(ransomNote: str, magazine: str):
+def canConstruct(ransom_note: str, magazine: str):
         map = {}
-        for char in ransomNote:               # build a hashmap with the letters in 'ransomNote' and values as appearances
+        for char in ransom_note:               # build a hashmap with the letters in 'ransom_note' and values as appearances
             if char not in map:
                 map[char] = 1
             else:
                 map[char] += 1
 
-        usedLetters = 0
+        used_letters = 0
         for char in magazine:
             if char in map and map[char] > 0: # traverse 'magazine' and decrease the value of hashmap, if the same letter appears
                 map[char] -= 1                  # ^ this would mean that a letter was 'used'
                 counter += 1                  # keep track of used letters, to break the inspection as early as possible
 
-            if usedLetters == len(ransomNote):
+            if used_letters == len(ransom_note):
                 break
 
         for key in map:                       # if there is at least one letter that was not used, return False
