@@ -14,7 +14,7 @@ What's the maximum number of points our player can get?
    / \       / 
   5  10     7 
 
-find_max_points(game) => 12
+find_max_points(game) => 13 // 1 - 8 - 4
 """
 
 def find_max_points(node): # This works as a recursive implementation of Depth First Search

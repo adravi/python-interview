@@ -14,7 +14,9 @@ def carFleet(target, positions, speeds):                # First, have a list wit
     pairs = [[p, s] for p, s in zip(positions, speeds)] # zip(): joins two lists together
                                                         # https://www.w3schools.com/python/ref_func_zip.asp
     stack = []
-    for pos, speed in sorted(pairs)[::-1]:          # sorted(list)[::1] : Reverse Sorted Order
+    
+                                                   # traverse the array from right to left, as slow cars absorb faster cars
+    for pos, speed in sorted(pairs)[::-1]:         # sorted(list)[::1] : Reverse Sorted Order
         miles_to_target = (target - pos) / speed   # calculate the miles still missing to meet the target (decimal division)
         stack.append(miles_to_target)              # push it to the stack, representing one car
         
@@ -22,3 +24,9 @@ def carFleet(target, positions, speeds):                # First, have a list wit
             stack.pop()                                # if they collide you can take out one of them
                                                        # since they merged into a 'fleet'
     return len(stack)                                  # simply return the size of stack
+
+# O(n) time
+# O(n) space
+
+# see car_fleet_explanation1 and car_fleet_explanation2
+# https://www.youtube.com/watch?v=Pr6T-3yB9RM&t=594s&ab_channel=NeetCode
