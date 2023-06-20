@@ -1,6 +1,5 @@
 """
 Max Game Points
-Question
 In a video game a player starts at the beginning of a maze,
 and there are several paths that can take them to the next level of the game.
 Each path has one or more milestones where the player gets one or more points for passing them.
