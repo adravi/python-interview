@@ -33,3 +33,5 @@ def water_trap(height):
 
 
 print(water_trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+
+# TODO: REVISIT: https://www.youtube.com/watch?v=ZI2z5pq0TqA&ab_channel=NeetCode
