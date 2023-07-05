@@ -19,8 +19,8 @@ def is_subtree(tree, subtree):
     if same_tree(tree, subtree): # we know that tree and subtree are non-empty. Make the comparison starting from the roots
         return True
     
-    return (is_subtree(tree.left, subtree.left) or     # keep exploring to see if at least, one of the branches is the same
-            is_subtree(tree.right, subtree.right))
+    return (is_subtree(tree.left, subtree) or     # keep exploring to see if at least, one of the branches is the same
+            is_subtree(tree.right, subtree))
 
 
 def same_tree(t1, t2):            # helper function      
