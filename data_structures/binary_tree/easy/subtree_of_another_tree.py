@@ -10,7 +10,6 @@ class TreeNode:
 # strategy: recursively explore the tree, 
 #           for any node matching the root of subtree recursively explore the rest of the tree to see if they match entirely
 def is_subtree(tree, subtree):
-
     if not subtree:              # any empty subtree is encompased in any given tree (even if the tree is empty)
         return True
     if not tree:                 # if a tree is empty, no non-empty subtree will be encompased in it
@@ -31,7 +30,7 @@ def same_tree(t1, t2):            # helper function
         return (same_tree(t1.left, t2.left) and  # keep exploring to see if at least, one of the branches is the same
                 same_tree(t1.right, t2.right))
     
-    return False                  # if we reach this point, the trees are NOT the same
+    return False                                 # if we reach this point, the trees are NOT the same
 
 # O(T * S) time
 # O(1)     space
