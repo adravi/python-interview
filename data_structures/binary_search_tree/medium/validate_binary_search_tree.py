@@ -25,7 +25,7 @@ def is_valid_bst(root):
         else:
             return False
         
-    valid_subtree(float('-inf'), root, float('inf'))
+    return valid_subtree(float('-inf'), root, float('inf'))
 
 
 # explanation: https://www.youtube.com/watch?v=s6ATEkipzow&ab_channel=NeetCode

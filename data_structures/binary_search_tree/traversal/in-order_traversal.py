@@ -7,25 +7,27 @@
    / \       / \
   3   5     6   8
 """
+
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-def pre_order(node):   # DFS
-    if node:
-        print(node.val, end=' ')
-    else:
+def in_order(node):
+    if not node:
         return
     
-    pre_order(node.left)
-    pre_order(node.right)
+    in_order(node.left)
+    
+    print(node.val, end=' ')
+    
+    in_order(node.right)
 
-# pre-order: 1 4 3 5 7 6 8
+# post-order: 3 4 5 1 6 7 8
 
-# O(V) time  / V: number of nodes
-# O(1) space / the algorithm itself uses no extra aux memory
+# O(V) time  / V: number of vertices/nodes
+# O(1) space / algo does not use extra aux memory
 # ------------------------------------------------------------------------
 
 node3 = TreeNode(3)
@@ -36,4 +38,6 @@ node8 = TreeNode(8)
 node7 = TreeNode(7, node6, node8)
 node1 = TreeNode(1, node4, node7)
 
-pre_order(node1)
+in_order(node1)
+
+# theory and uses: https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
