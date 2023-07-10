@@ -13,14 +13,14 @@ class TreeNode:
 def diameter_binary_tree(root):
     max_diameter = 0                # variable declared outside of the scope of inner function
     
-    def dfs(root):                  # inner function: recursive DFS to find height at a given node. Problems adapts to recursion
+    def dfs(node):                  # inner function: recursive DFS to find height at a given node. Problems adapts to recursion
         nonlocal max_diameter       # nonlocal: access variable declared outside of inner function
         
-        if root is None:            # stop condition
+        if node is None:            # stop condition
             return 0
         
-        left = dfs(root.left)       # recursively calculate the height of left branch 
-        right = dfs(root.right)     # recursively calculate the height of right branch
+        left = dfs(node.left)       # recursively calculate the height of left branch 
+        right = dfs(node.right)     # recursively calculate the height of right branch
         
         curr_diameter = left + right                    # at a given node, the diameter is the sum of the left and right heights
         max_diameter = max(curr_diameter, max_diameter) # update the max diameter
