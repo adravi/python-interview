@@ -2,14 +2,6 @@
 
 # theory and uses: https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
 
-def in_order_traverse(tree, array):
-    if tree:
-        in_order_traverse(tree.left, array)
-        array.append(tree.value)
-        in_order_traverse(tree.right, array)
-    return array
-
-
 def pre_order_traverse(tree, array):
     if tree:
         array.append(tree.value)
@@ -17,6 +9,12 @@ def pre_order_traverse(tree, array):
         pre_order_traverse(tree.right, array)
     return array
 
+def in_order_traverse(tree, array):
+    if tree:
+        in_order_traverse(tree.left, array)
+        array.append(tree.value)
+        in_order_traverse(tree.right, array)
+    return array
 
 def post_order_traverse(tree, array):
     if tree:
