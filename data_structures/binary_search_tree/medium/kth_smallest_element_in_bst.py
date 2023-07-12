@@ -1,11 +1,12 @@
 # https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 # explanation: https://www.youtube.com/watch?v=5LUXSvjmGCw&ab_channel=NeetCode
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
-"""
+"""                                                This is a BST, so because of the props of it, the in-order array works
           5
         /   \
        3     6
@@ -13,6 +14,7 @@ class TreeNode:
      2   4
     /
    1
+
 root     = [5, 3, 6, 2, 4, null, null, 1], k = 3
 in-order = [1, 2, 3, 4, 5, 6] -------------------- straight-fw: generate the in-order array and return the kth element
                   ^ kth element
@@ -37,7 +39,6 @@ def kth_smallest(root, k): # strat: as soon as the kth element is found, it is r
             return curr.val    # return the value, no need to keep exploring the tree <- OPTIMIZATION
         
         curr = curr.right      # now we explore the right branch
-
 
 
 # ------------------------------------------------ recursive solution: O(n) time, O(1) space
