@@ -1,44 +1,53 @@
 # https://leetcode.com/problems/pacific-atlantic-water-flow/
 # input: see image
-
 # explanation: https://www.youtube.com/watch?v=s-VkcjHqkGI&ab_channel=NeetCode
 
+# through DFS:
+#   inspect first row (top) and first column (left) for PACIFIC, the heights must be non-decreasing to be flow-valid
+#   inspect last row (bottom) and last column (right) for ATLANTIC, the heights must be non-decreasing to be flow-valid
+
 def pacific_atlantic(heights):
-    ROWS, COLS = len(heights), len(heights[0])
-    visited_pacific, visited_atlantic = set(), set()
+    ROWS, COLS = len(heights), len(heights[0])       # as always, define the dimensions of the grid, from the beggining
+    visited_pacific, visited_atlantic = set(), set() # have 2 hashsets, 1 for each ocean, to store the visited coordinates
 
-    def dfs(r, c, visited, prev_height):
+
+    def dfs(r, c, visited, prev_height): # -------------------------- DFS internal function
         if (r not in range(ROWS) or
-            c not in range(COLS) or
-            (r, c) in visited or
-            heights[r][c] < prev_height):
-            return
+            c not in range(COLS) or               # check if the position coordinates are in-bound with the grid dimensions
+            (r, c) in visited or                  # check if the position has been visited already
+            heights[r][c] < prev_height):         # check if curr height is lower than the previous height (water doesnt flow)
+            return                                # if any of the above is true, then this position must not be 'processed' next
         
-        visited.add((r, c))
-        dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+        visited.add((r, c))                       # if not, then this position is 'processed' and must be marked as visited
+
+        dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]] # the directions of the next 4 ceil positions to inspect in the grid
         for dir_r, dir_c in dirs:
-            new_pos_r, new_pos_c = (r + dir_r), (c + dir_c)
-            dfs(new_pos_r, new_pos_c, visited, heights[r][c])
-        
-    for col in range(COLS):
-        prev_height_pacific = heights[0][col]                      # Go to every column in the first row
-        dfs(0, col, visited_pacific, prev_height_pacific)          # pacific ->  | flowing to the right from pacific    
+            new_pos_r = r + dir_r                             # update the position of row and cols
+            new_pos_c = c + dir_c
+            dfs(new_pos_r, new_pos_c, visited, heights[r][c]) # recursively call DFS on each of the next positions to inspect
+                                                              # the current position (r, c) is passed as the prev_position
+    
 
-        prev_height_atlantic = heights[ROWS-1][col]                # Go to every column in the last row
-        dfs(ROWS-1, col, visited_atlantic, prev_height_atlantic)   # <- atlantic | flowing to the left from atlantic
+    for col in range(COLS):                                       # go to every column in the first row                                                    
+        dfs(0, col, visited_pacific, heights[0][col])             # pacific ->  | flowing to the right from pacific    
 
-    for row in range(ROWS):
-        prev_height_pacific = heights[row][0]                      # Go to every row in the first column
-        dfs(row, 0, visited_pacific, prev_height_pacific)          # \/ pacific  | flowing to the bottom from pacific
+        dfs(ROWS-1, col, visited_atlantic, heights[ROWS-1][col])  # go to every column in the last row
+                                                                  # <- atlantic | flowing to the left from atlantic
 
-        prev_height_atlantic = heights[row][COLS-1]                # Go to every row in the last column
-        dfs(row, COLS-1, visited_atlantic, prev_height_atlantic)   # ^ atlantic  | flowing to the top from atlantic
+    for row in range(ROWS):                                       # go to every row in the first column    
+        dfs(row, 0, visited_pacific, heights[row][0])             # \/ pacific  | flowing to the bottom from pacific
+
+        dfs(row, COLS-1, visited_atlantic, heights[row][COLS-1] ) # go to every row in the last column 
+                                                                  # ^ atlantic  | flowing to the top from atlantic
 
     res = []
-    for row in range(ROWS):
+    for row in range(ROWS):                        # Finally, inspect every ceil on the grid
         for col in range(COLS):
             if ((row, col) in visited_pacific and
                 (row, col) in visited_atlantic):
-                res.append([row, col])
+                res.append([row, col])             # if the position appears in both pacif and atlan sets, it's part of result
 
     return res
+
+# O(m x n) time  // size of the grid
+# O(1)    space  // recursive algorithm
