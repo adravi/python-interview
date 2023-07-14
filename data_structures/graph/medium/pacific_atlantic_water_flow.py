@@ -3,8 +3,8 @@
 # explanation: https://www.youtube.com/watch?v=s-VkcjHqkGI&ab_channel=NeetCode
 
 # through DFS:
-#   inspect first row (top) and first column (left) for PACIFIC, the heights must be non-decreasing to be flow-valid
-#   inspect last row (bottom) and last column (right) for ATLANTIC, the heights must be non-decreasing to be flow-valid
+#   inspect first row (top) and first column (left) for PACIFIC, the heights must be non-increasing to be flow-valid
+#   inspect last row (bottom) and last column (right) for ATLANTIC, the heights must be non-increasing to be flow-valid
 
 def pacific_atlantic(heights):
     ROWS, COLS = len(heights), len(heights[0])       # as always, define the dimensions of the grid, from the beggining
@@ -28,17 +28,17 @@ def pacific_atlantic(heights):
                                                               # the current position (r, c) is passed as the prev_position
     
 
-    for col in range(COLS):                                       # go to every column in the first row                                                    
-        dfs(0, col, visited_pacific, heights[0][col])             # pacific ->  | flowing to the right from pacific    
+    for col in range(COLS):                                       # go to every column in the first row | flow into pacific                                                 
+        dfs(0, col, visited_pacific, heights[0][col])             # \/ expand ceils top-to-bottom | must be non-increase
 
-        dfs(ROWS-1, col, visited_atlantic, heights[ROWS-1][col])  # go to every column in the last row
-                                                                  # <- atlantic | flowing to the left from atlantic
+        dfs(ROWS-1, col, visited_atlantic, heights[ROWS-1][col])  # go to every row in the last column | flow into atlantic
+                                                                  # ^ expamd ceils bottom-to-top | must be non-increase
 
-    for row in range(ROWS):                                       # go to every row in the first column    
-        dfs(row, 0, visited_pacific, heights[row][0])             # \/ pacific  | flowing to the bottom from pacific
+    for row in range(ROWS):                                       # go to every row in the first column | flow into pacific
+        dfs(row, 0, visited_pacific, heights[row][0])             # -> expand ceils left-to-right | must be non-increase
 
-        dfs(row, COLS-1, visited_atlantic, heights[row][COLS-1] ) # go to every row in the last column 
-                                                                  # ^ atlantic  | flowing to the top from atlantic
+        dfs(row, COLS-1, visited_atlantic, heights[row][COLS-1] ) # go to every column in the last row | flow into atlantic
+                                                                  # <- expand ceils right-to-left | must be non-increase
 
     res = []
     for row in range(ROWS):                        # Finally, inspect every ceil on the grid
