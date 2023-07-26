@@ -10,7 +10,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def recursiveInvert(self, node):
+def recursive_invert(self, node):
     if node:
         left = node.left
         right = node.right
@@ -18,12 +18,12 @@ def recursiveInvert(self, node):
         node.left = right
         node.right = left
 
-        self.recursiveInvert(node.left)
-        self.recursiveInvert(node.right)
+        self.recursive_invert(node.left)
+        self.recursive_invert(node.right)
 
-def invertTree(self, root):
+def invert_tree(self, root):
     node = root
-    self.recursiveInvert(node)
+    self.recursive_invert(node)
     return root
 
 # O(V) time  / V: number of vertices/nodes

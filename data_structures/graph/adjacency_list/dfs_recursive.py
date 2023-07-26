@@ -3,23 +3,23 @@
 
 class Graph:
     def __init__(self): 
-        self.adjacentMap = {}
+        self.adjacent_map = {}
  
-    def addEdge(self, node1, node2):
-        if node1 in self.adjacentMap:
-            self.adjacentMap[node1].append(node2)
+    def add_edge(self, node1, node2):
+        if node1 in self.adjacent_map:
+            self.adjacent_map[node1].append(node2)
         else:
-            self.adjacentMap[node1] = [node2]
+            self.adjacent_map[node1] = [node2]
 
-        if node2 not in self.adjacentMap:
-            self.adjacentMap[node2] = []
+        if node2 not in self.adjacent_map:
+            self.adjacent_map[node2] = []
 
 
     def DFS(self, node, visited):        
         print(node, end=' ')
         visited.add(node)    # The hashset is to avoid visiting each node more than once. The graph could have cycles!
 
-        for adjacentNode in self.adjacentMap[node]:
+        for adjacentNode in self.adjacent_map[node]:
             if adjacentNode not in visited:
                 self.DFS(adjacentNode, visited)
 
@@ -28,15 +28,15 @@ If the entire graph is traversed, the temporal complexity of DFS is O(V), where 
 """
 
 graph = Graph();
-graph.addEdge(3, 6);
-graph.addEdge(3, 9);
-graph.addEdge(3, 7);
-graph.addEdge(6, 11);
-graph.addEdge(6, 4);
-graph.addEdge(7, 1);
-graph.addEdge(1, 54);
-graph.addEdge(1, 2);
-graph.addEdge(1, 22);
+graph.add_edge(3, 6);
+graph.add_edge(3, 9);
+graph.add_edge(3, 7);
+graph.add_edge(6, 11);
+graph.add_edge(6, 4);
+graph.add_edge(7, 1);
+graph.add_edge(1, 54);
+graph.add_edge(1, 2);
+graph.add_edge(1, 22);
 
 #                3
 #           /    |    \
