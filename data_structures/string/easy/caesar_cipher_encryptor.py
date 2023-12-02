@@ -3,7 +3,7 @@
 # input: string = 'xyz', key = 2
 # output: 'zab'
 
-def caesarCipherEncryptor(string, key):
+def caesar_cipher_ecryptor(string, key):
     newStringChars = []                     # ASCI values | 'a': 97, 'z': 122 | 26 chars from 'a' -to- 'z'
 
     for char in string:
