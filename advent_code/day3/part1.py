@@ -66,7 +66,7 @@ def gears_ratios(grid: list[str]) -> int:
                     num = ''
                     adjacent_symbol = False
 
-            elif not char.isdigit():
+            elif not char.isdigit() and num:
                 if adjacent_symbol:
                     nums.append(int(num))
                 num = ''
