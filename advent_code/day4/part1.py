@@ -1,14 +1,14 @@
 # https://adventofcode.com/2023/day/4
 
-def scratchcarts(lists_pairs):
+def scratchcarts(card_lists):
     res = 0
     
-    for lists in lists_pairs:
+    for lists in card_lists:
         points = 0
         winning = set(lists[0])
-        actual = lists[1]
+        numbers = lists[1]
 
-        for num in actual:
+        for num in numbers:
             if num in winning:
                 if points == 0:
                     points = 1
@@ -18,8 +18,6 @@ def scratchcarts(lists_pairs):
         res += points
 
     return res
-
-
 
 test = [
     [[41, 48, 83, 86, 17], [83, 86,  6, 31, 17, 9, 48, 53]],

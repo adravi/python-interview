@@ -4,7 +4,7 @@ from collections import defaultdict
 
 def scratchcards(card_lists):
     res = 0
-    card_points = defaultdict(int)
+    points = defaultdict(int)
 
     for i, lists in enumerate(card_lists):
         card_points[i] += 1
@@ -14,9 +14,9 @@ def scratchcards(card_lists):
 
         matches = winning.intersection(numbers)
         for j in range(len(matches)):
-            card_points[i + j + 1] += card_points[i]
+            points[i + j + 1] += points[i]
 
-        res += card_points[i]
+        res += points[i]
     
     return res
 
